@@ -1,0 +1,22 @@
+@import '../../../styles/variables';
+
+.form {
+  padding-top: 2rem;
+
+  &__title {
+    &--color {
+      color: $Gray_1_Titles;
+    }
+  }
+
+  .form-check-label {
+    a {
+      color: $Gray_2_Paragraph;
+      font-weight: bold;
+    }
+
+    &--color {
+      color: $Gray_2_Paragraph;
+    };
+  }
+}
