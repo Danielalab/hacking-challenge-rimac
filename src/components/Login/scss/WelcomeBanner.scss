@@ -1,12 +1,42 @@
 @import '../../../styles/variables';
 
+%title--color {
+  color: $Red_1_Rimac;
+}
+
 .banner {
   background-color: $Gray_7;
-  padding-top: 5.5rem;
+  padding-top: 5.4rem;
+  padding-bottom: 3.4rem;
   min-height: 308 / 810 * 100vh;
 
   &__image-mobile {
     position: absolute;
     right: 0;
+  }
+
+  &__title--color {
+    @extend %title--color;
+  }
+
+  @media (min-width: 992px) {
+    background-image: url('../../../images/banner-background.png');
+    background-color: #ECF0FF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 0;
+    height: 100vh;
+
+    &__title-desktop--color {
+      @extend %title--color,
+    }
+
+    &__content--padding {
+      padding-left: 3.5rem;
+    }
+
+    &__image-dektop {
+      width: 100%;
+    }
   }
 }
