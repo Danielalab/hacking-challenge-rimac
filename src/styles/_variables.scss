@@ -1,4 +1,25 @@
+/* fonts */
+$font_title: 'Lato', sans-serif;
+$font_text: 'Roboto', sans-serif;
+
+/* colors */
 $Acian_1 : #939DFF;
 $Acian_2 : #6769FF;
 $Acian_2_Hover : #6F7DFF;
-$hide_element: none;
+
+$Green_2 : #43B748;
+
+$Gray_1_Titles:  #494F66;
+$Gray_2_Paragraph: #676F8F;
+$Gray_3 : #A3ABCC;
+$Gray_7: #F7F8FC;
+
+$Red_1_Rimac: #EF3340;
+
+$white : #FFFFFF; 
+
+/* custum Bootstrap */
+
+$form-select-indicator-color:  $Red_1_Rimac;
+$form-check-input-checked-bg-color: $Green_2;
+$form-check-input-checked-border-color: $Green_2;
