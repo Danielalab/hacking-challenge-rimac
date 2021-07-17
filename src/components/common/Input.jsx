@@ -9,9 +9,11 @@ const InputField = ({
   maxLength,
   pattern,
   required = true,
+  ...rest
 }) => (
   <div className="form-floating">
     <input
+      {...rest}
       type={type}
       className="form-control"
       id={id}
