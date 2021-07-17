@@ -2,7 +2,7 @@ import './scss/Header.scss';
 import logoRimac from '../../images/logo-rimac.svg';
 
 const Header = () => (
-  <header className="fixed-top header--height">
+  <header className="header header--height">
     <nav className="navbar navbar-light bg-transparent">
       <div className="container-fluid container--padding">
         <a className="navbar-brand" href="/">
