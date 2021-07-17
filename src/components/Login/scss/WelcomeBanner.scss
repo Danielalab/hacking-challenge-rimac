@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.banner {
+  background-color: $Gray_7;
+  padding-top: 5.5rem;
+  min-height: 308 / 810 * 100vh;
+
+  &__image-mobile {
+    position: absolute;
+    right: 0;
+  }
+}
