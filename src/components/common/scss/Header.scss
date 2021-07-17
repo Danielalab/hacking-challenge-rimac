@@ -1,9 +1,19 @@
 @import '../../../styles/variables';
 
-.header--height {
-  min-height: 56 / 810 * 100vh;
-}
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 
-.call-message--color {
-  color: $Acian_2;
+  &--height {
+    min-height: 56 / 810 * 100vh;
+  }
+
+  .call-message {
+    &--color {
+      color: $Acian_2;
+    }
+  }
 }
