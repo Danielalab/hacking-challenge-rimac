@@ -28,11 +28,21 @@ body {
 
 .view--padding-vertical {
   padding: 3.5rem 0;
-} 
+}
+
+.container--height {
+  height: 100vh;
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .container--padding {
     padding: 0 7.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container--full-height {
+    height: 100vh;
   }
 }

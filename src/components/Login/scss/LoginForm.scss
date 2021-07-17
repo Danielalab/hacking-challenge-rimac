@@ -2,6 +2,8 @@
 
 .form {
   padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 400px;
 
   &__title {
     &--color {
@@ -18,5 +20,10 @@
     &--color {
       color: $Gray_2_Paragraph;
     };
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 0;
+    padding-bottom: 3.4rem;
   }
 }
