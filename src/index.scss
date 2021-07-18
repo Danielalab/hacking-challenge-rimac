@@ -15,12 +15,18 @@ body {
   padding: 0 2rem;
 }
 
-.title--font {
-  font-family: $font_title;
-}
+.title {
+  &--color {
+    color: $Gray_1_Titles;
+  }
 
-.title--color {
-  color: $Gray_1_Titles;
+  &--font {
+  font-family: $font_title;
+  }
+
+  &__text--highlighted {
+    color: $Red_1_Rimac;
+  }
 }
 
 .paragraph--color {
@@ -45,5 +51,11 @@ body {
 @media (min-width: 992px) {
   .container--full-height {
     height: 100vh;
+  }
+
+  .title {
+    &__text-desktop--highlighted {
+      color: $Red_1_Rimac;
+    }
   }
 }

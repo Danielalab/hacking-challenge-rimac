@@ -11,10 +11,6 @@
     right: 0;
   }
 
-  &__title--color {
-    color: $Red_1_Rimac;
-  }
-
   @media (min-width: 992px) {
     background-image: url('../../../images/banner-background.png');
     background-color: #ECF0FF;
@@ -22,10 +18,6 @@
     background-repeat: no-repeat;
     padding-top: 0;
     height: 100vh;
-
-    &__title-desktop--color {
-      color: $Red_1_Rimac;
-    }
 
     &__content--padding {
       padding-left: 3.5rem;
