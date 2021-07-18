@@ -10,6 +10,7 @@ import Select from '../common/Select';
 
 /* controllers */
 import { getUserData } from '../../api/userQuery';
+import { eventHandler } from '../utils';
 
 /* Context */
 import { UserContext } from '../../context/UserContext';
@@ -24,8 +25,6 @@ const LoginForm = () => {
   const [mobilePhone, setMobilePhone] = useState('');
   const [carPlate, setCarPlate] = useState('');
   const [agreedToConditions, setAgreedToConditions] = useState(true);
-
-  const eventHandler = (setStateCallback) => (value) => { setStateCallback(value); };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -51,9 +50,11 @@ const LoginForm = () => {
         <div className="input-group mb-3">
           <Select
             id="document-type"
+            label="Tipo de documento"
             value={documentType}
             onChange={(event) => eventHandler(setDocumentType)(event.target.value)}
             required
+            floating={false}
           >
             <option value="DNI">DNI</option>
             <option value="CE">CE</option>
