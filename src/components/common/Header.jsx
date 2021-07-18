@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import './scss/Header.scss';
 import logoRimac from '../../images/logo-rimac.svg';
 
-const Header = () => (
-  <header className="header header--height">
+const Header = ({ backgroundIsTransparent }) => (
+  <header className={`header header--height ${backgroundIsTransparent && 'header--transparent'}`}>
     <nav className="navbar navbar-light bg-transparent">
       <div className="container-fluid container--padding">
         <a className="navbar-brand" href="/">
@@ -30,3 +31,11 @@ const Header = () => (
 );
 
 export default Header;
+
+Header.defaultProps = {
+  backgroundIsTransparent: false,
+};
+
+Header.propTypes = {
+  backgroundIsTransparent: PropTypes.bool,
+};
