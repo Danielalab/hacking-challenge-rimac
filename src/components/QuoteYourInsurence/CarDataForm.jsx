@@ -26,6 +26,7 @@ const CarDataForm = ({
   setYearOfCar,
   modelOfCar,
   setmodelOfCar,
+  clientName,
 }) => {
   const currentYear = getCurrentYear();
   const yearsList = buildYearsList(currentYear);
@@ -50,7 +51,10 @@ const CarDataForm = ({
       <h2 className="title--color my-2">
         ¡Hola,
         {' '}
-        <span className="title__text--highlighted">Juan!</span>
+        <span className="title__text--highlighted">
+          {clientName}
+          !
+        </span>
       </h2>
       <p className="pb-4 mb-2">Completa los datos de tu auto</p>
       <div className="mb-3">
@@ -92,6 +96,7 @@ const CarDataForm = ({
             type="radio"
             name="gas-car"
             id="gas-car-no"
+            checked
           />
           <label className="form-check-label form-check-label--color" htmlFor="gas-car-no">
             No
@@ -167,4 +172,5 @@ CarDataForm.propTypes = {
   setYearOfCar: PropTypes.func.isRequired,
   modelOfCar: PropTypes.string.isRequired,
   setmodelOfCar: PropTypes.func.isRequired,
+  clientName: PropTypes.string.isRequired,
 };
