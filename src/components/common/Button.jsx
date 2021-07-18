@@ -7,9 +7,14 @@ const Button = ({
   classes,
   children,
   size,
+  ...rest
 }) => (
-  // eslint-disable-next-line react/button-has-type
-  <button className={`btn button button--${color} ${size && `button--${size}`} ${classes}`} type={type}>
+  <button
+    className={`btn button button--${color} ${size && `button--${size}`} ${classes}`}
+    // eslint-disable-next-line react/button-has-type
+    type={type}
+    {...rest}
+  >
     {children}
   </button>
 );
