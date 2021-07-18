@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+
+.help-card {
+  &--background {
+    background-color: $Gray_7;
+  }
+
+  &__link {
+    color: $Acian_2_Hover;
+    font-size: 0.8rem;;
+    font-weight: 700;
+  }
+
+  @media (min-width: 992px) {
+    &--background {
+      background-color: none;
+    }
+  }
+}
