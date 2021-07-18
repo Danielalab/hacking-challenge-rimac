@@ -19,8 +19,9 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "react/jsx-props-no-spreading": ["error", {
-            "html": "ignore"
+        "react/jsx-props-no-spreading": ["off", {
+            "html": "ignore",
+            "custom": "ignore"
         }],
         "jsx-a11y/label-has-associated-control": [ "error", {
             "required": {
