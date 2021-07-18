@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   Switch,
   Route,
@@ -8,6 +8,7 @@ import {
 import CarDataForm from '../components/QuoteYourInsurence/CarDataForm';
 import StepsProgress from '../components/QuoteYourInsurence/StepsProgress';
 import { getCurrentYear } from '../components/utils';
+import { UserContext } from '../context/UserContext';
 
 const QuoteYourInsurenceView = () => {
   const { path } = useRouteMatch();
@@ -15,6 +16,7 @@ const QuoteYourInsurenceView = () => {
   const currentYear = getCurrentYear();
   const [yearOfCar, setYearOfCar] = useState(currentYear);
   const [modelOfCar, setmodelOfCar] = useState('Wolkswagen');
+  const { user: { name } } = useContext(UserContext);
 
   const steps = [
     { name: 'Datos del auto', pathname: `${path}/datos-del-auto` },
@@ -35,6 +37,7 @@ const QuoteYourInsurenceView = () => {
                   setYearOfCar,
                   modelOfCar,
                   setmodelOfCar,
+                  clientName: name,
                 }
               }
               />
