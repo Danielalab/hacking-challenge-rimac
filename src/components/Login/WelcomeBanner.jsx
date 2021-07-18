@@ -14,8 +14,8 @@ const WelcomeBanner = () => (
       <h1 className="mb-3 title--font title--color">
         Seguro
         {' '}
-        <span className="banner__title-desktop--color">Vehicular</span>
-        <span className="banner__title--color"> Tracking</span>
+        <span className="title__text-desktop--highlighted">Vehicular</span>
+        <span className="title__text--highlighted"> Tracking</span>
       </h1>
       <p className="m-0 paragraph--color">
         Cuentanos donde le haras
