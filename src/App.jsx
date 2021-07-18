@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
+  useLocation,
 } from 'react-router-dom';
 
 /* Components */
@@ -11,22 +11,25 @@ import LoginView from './pages/LoginView';
 
 /* Context */
 import { UserContext } from './context/UserContext';
+import QuoteYourInsurenceView from './pages/QuoteYourInsurenceView';
 
 function App() {
   const [user, setUser] = useState(null);
+  const { pathname } = useLocation();
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <Router>
-        <div>
-          <Header />
-          <Switch>
-            <Route path="/">
-              <LoginView />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <div>
+        <Header backgroundIsTransparent={pathname === '/'} />
+        <Switch>
+          <Route exact path="/">
+            <LoginView />
+          </Route>
+          <Route path="/cotiza-tu-seguro">
+            <QuoteYourInsurenceView />
+          </Route>
+        </Switch>
+      </div>
     </UserContext.Provider>
   );
 }
