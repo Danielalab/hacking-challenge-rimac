@@ -13,39 +13,41 @@ const InputField = ({
   floating,
   classes,
   ...rest
-}) => {
-  const InputElement = () => (
-    <input
-      {...rest}
-      type={type}
-      className={`form-control ${classes}`}
-      id={id}
-      placeholder={placeholder}
-      aria-label={label || ariaLabel}
-      maxLength={maxLength}
-      pattern={pattern}
-      required={required}
-    />
-  );
-  const LabelElement = () => (
-    <label className="label" htmlFor={id}>{label}</label>
-  );
-  return (
-    floating
-      ? (
-        <div className="form-floating">
-          <InputElement />
-          {label && <LabelElement />}
-        </div>
-      )
-      : (
-        <>
-          <InputElement />
-          {label && <LabelElement />}
-        </>
-      )
-  );
-};
+}) => (
+  floating
+    ? (
+      <div className="form-floating">
+        <input
+          {...rest}
+          type={type}
+          className={`form-control ${classes}`}
+          id={id}
+          placeholder={placeholder}
+          aria-label={label || ariaLabel}
+          maxLength={maxLength}
+          pattern={pattern}
+          required={required}
+        />
+        {label && <label className="label" htmlFor={id}>{label}</label>}
+      </div>
+    )
+    : (
+      <>
+        <input
+          {...rest}
+          type={type}
+          className={`form-control ${classes}`}
+          id={id}
+          placeholder={placeholder}
+          aria-label={label || ariaLabel}
+          maxLength={maxLength}
+          pattern={pattern}
+          required={required}
+        />
+        {label && <label className="label" htmlFor={id}>{label}</label>}
+      </>
+    )
+);
 
 export default InputField;
 
