@@ -7,24 +7,45 @@ const InputField = ({
   placeholder,
   id,
   maxLength,
+  ariaLabel,
   pattern,
-  required = true,
+  required,
+  floating,
+  classes,
   ...rest
-}) => (
-  <div className="form-floating">
+}) => {
+  const InputElement = () => (
     <input
       {...rest}
       type={type}
-      className="form-control"
+      className={`form-control ${classes}`}
       id={id}
       placeholder={placeholder}
+      aria-label={label || ariaLabel}
       maxLength={maxLength}
       pattern={pattern}
       required={required}
     />
+  );
+  const LabelElement = () => (
     <label className="label" htmlFor={id}>{label}</label>
-  </div>
-);
+  );
+  return (
+    floating
+      ? (
+        <div className="form-floating">
+          <InputElement />
+          {label && <LabelElement />}
+        </div>
+      )
+      : (
+        <>
+          <InputElement />
+          {label && <LabelElement />}
+        </>
+      )
+  );
+};
 
 export default InputField;
 
@@ -32,6 +53,9 @@ InputField.defaultProps = {
   placeholder: '',
   maxLength: undefined,
   pattern: '',
+  ariaLabel: null,
+  floating: true,
+  classes: '',
   required: false,
 };
 
@@ -41,6 +65,9 @@ InputField.propTypes = {
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
   maxLength: PropTypes.number,
+  ariaLabel: PropTypes.string,
   pattern: PropTypes.string,
+  classes: PropTypes.string,
   required: PropTypes.bool,
+  floating: PropTypes.bool,
 };
