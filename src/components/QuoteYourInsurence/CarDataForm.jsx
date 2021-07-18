@@ -1,15 +1,16 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 /* styles */
 import './scss/CarDataForm.scss';
 /* controllers */
-import { eventHandler } from '../utils';
+import { eventHandler, getCurrentYear } from '../utils';
 /* Components */
 import Button from '../common/Button';
 import Select from '../common/Select';
 import InputField from '../common/Input';
 import HelpCardToFindCarModel from './HelpCardToFindCarModel';
 
-const yearsList = (currentYear) => {
+const buildYearsList = (currentYear) => {
   const optionsList = [];
   for (let index = 1990; index <= currentYear; index += 1) {
     const element = <option key={index} value={index}>{index}</option>;
@@ -20,18 +21,36 @@ const yearsList = (currentYear) => {
 
 const carModelsList = ['Audi', 'BMW', 'Ford', 'Mercedes-Benz', 'Nissan', 'Renault', 'Toyota', 'Wolkswagen'];
 
-const CarDataForm = () => {
-  const currentYear = new Date().getFullYear();
-  const [yearOfCar, setYearOfCar] = useState(currentYear);
-  const [modelOfCar, setmodelOfCar] = useState('Wolkswagen');
+const CarDataForm = ({
+  yearOfCar,
+  setYearOfCar,
+  modelOfCar,
+  setmodelOfCar,
+}) => {
+  const currentYear = getCurrentYear();
+  const yearsList = buildYearsList(currentYear);
+  const minSumInsured = 12500;
+  const maxSumInsured = 16500;
   const [totalSumInsured, setTotalSumInsured] = useState(14300);
+
+  const decreaseOrIncrementBy100 = (min, max, currentNumber) => (operation) => {
+    if (operation === 'INCREMENT' && currentNumber < max) {
+      setTotalSumInsured(currentNumber + 100);
+    } else if (operation === 'DECREASE' && currentNumber > min) {
+      setTotalSumInsured(currentNumber - 100);
+    }
+  };
+
+  const changeTotalSumInsured = decreaseOrIncrementBy100(
+    minSumInsured, maxSumInsured, totalSumInsured,
+  );
 
   return (
     <form className="form container-fluid">
       <h2 className="title--color my-2">
         ¡Hola,
         {' '}
-        <span>Juan!</span>
+        <span className="title__text--highlighted">Juan!</span>
       </h2>
       <p className="pb-4 mb-2">Completa los datos de tu auto</p>
       <div className="mb-3">
@@ -41,7 +60,7 @@ const CarDataForm = () => {
           value={yearOfCar}
           onChange={(event) => eventHandler(setYearOfCar)(event.target.value)}
         >
-          {yearsList(currentYear)}
+          {yearsList}
         </Select>
       </div>
       <div className="mb-3">
@@ -85,13 +104,25 @@ const CarDataForm = () => {
           Indica la suma asegurada
           <br />
           <span className="price-range__label paragraph--color d-flex justify-content-between mt-1">
-            <span>MIN $12.500</span>
-            <span>MAX $16,500</span>
+            <span>
+              MIN $
+              {minSumInsured}
+            </span>
+            <span>
+              MAX $
+              {maxSumInsured}
+            </span>
           </span>
         </label>
       </p>
       <div className="input-group pb-4 mb-2">
-        <Button classes="border-end-0" type="button" color="outline-light" size="small">
+        <Button
+          classes="border-end-0"
+          type="button"
+          color="outline-light"
+          size="small"
+          onClick={() => changeTotalSumInsured('DECREASE')}
+        >
           <span className="bi bi-dash-lg" />
         </Button>
         <InputField
@@ -100,12 +131,18 @@ const CarDataForm = () => {
           type="text"
           id="total-sum-insured"
           value={`$ ${totalSumInsured}`}
-          onChange={(event) => eventHandler(setTotalSumInsured)(event.target.value)}
           maxLength={8}
           pattern="[0-9]{8}"
           floating={false}
+          readonly
         />
-        <Button classes="border-start-0" type="button" color="outline-light" size="small">
+        <Button
+          classes="border-start-0"
+          type="button"
+          color="outline-light"
+          size="small"
+          onClick={() => changeTotalSumInsured('INCREMENT')}
+        >
           <span className="bi bi-plus-lg" />
         </Button>
       </div>
@@ -124,3 +161,10 @@ const CarDataForm = () => {
 };
 
 export default CarDataForm;
+
+CarDataForm.propTypes = {
+  yearOfCar: PropTypes.number.isRequired,
+  setYearOfCar: PropTypes.func.isRequired,
+  modelOfCar: PropTypes.string.isRequired,
+  setmodelOfCar: PropTypes.func.isRequired,
+};
