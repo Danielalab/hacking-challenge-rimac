@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 /* Styles */
 import './scss/LoginForm.scss';
@@ -16,6 +17,7 @@ import { eventHandler } from '../utils';
 import { UserContext } from '../../context/UserContext';
 
 const LoginForm = () => {
+  const history = useHistory();
   /* get UserContext value */
   const { setUser } = useContext(UserContext);
 
@@ -37,6 +39,7 @@ const LoginForm = () => {
           carPlate,
         };
         setUser(userData);
+        history.push('/cotiza-tu-seguro/datos-del-auto');
       });
   };
 
