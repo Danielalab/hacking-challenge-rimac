@@ -12,14 +12,23 @@
   letter-spacing: 0.8px;
   min-width: 192px;
   padding: 1.2rem 2rem;
-}
 
-.button-primary {
-  color: $white;
-  background-color: $Red_1_Rimac;
+  &--small {
+    min-width: auto;
+  }
 
-  &:hover {
-    color: shade-color($white, 10%);
-    background-color: shade-color($Red_1_Rimac, 10%);
+  &--primary {
+    color: $white;
+    background-color: $Red_1_Rimac;
+  
+    &:hover {
+      color: shade-color($white, 10%);
+      background-color: shade-color($Red_1_Rimac, 10%);
+    }
+  }
+
+  &--outline-light {
+    border: 1px solid $Gray_4;
   }
 }
+
