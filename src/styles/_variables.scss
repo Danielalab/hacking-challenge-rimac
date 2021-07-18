@@ -12,7 +12,9 @@ $Green_2 : #43B748;
 $Gray_1_Titles:  #494F66;
 $Gray_2_Paragraph: #676F8F;
 $Gray_3 : #A3ABCC;
+$Gray_4: #C5CBE0;
 $Gray_5: #E4E8F7;
+$Gray_6: #F0F2FA;
 $Gray_7: #F7F8FC;
 
 $Red_1_Rimac: #EF3340;
@@ -21,6 +23,10 @@ $white : #FFFFFF;
 
 /* custum Bootstrap */
 
+$input-border-color: $Gray_4;
 $form-select-indicator-color:  $Red_1_Rimac;
 $form-check-input-checked-bg-color: $Green_2;
 $form-check-input-checked-border-color: $Green_2;
+$progress-bg: $Gray_5;
+$progress-bar-bg: $Acian_2;
+$progress-height: 0.5rem;
