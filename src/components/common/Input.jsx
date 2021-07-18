@@ -50,6 +50,7 @@ const InputField = ({
 export default InputField;
 
 InputField.defaultProps = {
+  label: null,
   placeholder: '',
   maxLength: undefined,
   pattern: '',
@@ -60,7 +61,7 @@ InputField.defaultProps = {
 };
 
 InputField.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
