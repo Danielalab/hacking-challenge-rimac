@@ -46,7 +46,7 @@ const LoginForm = () => {
   return (
     <div className="container--full-height d-flex align-items-center">
       <form
-        className="form container-fluid needs-validation"
+        className="form login__form--width container-fluid needs-validation"
         onSubmit={handleSubmit}
       >
         <h2 className="form__title--color mb-4">Déjanos tus datos</h2>

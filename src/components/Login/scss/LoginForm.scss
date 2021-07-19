@@ -2,7 +2,6 @@
 
 .form {
   padding: 2rem;
-  max-width: 400px;
 
   &__title {
     &--color {
@@ -20,7 +19,10 @@
       color: $Gray_2_Paragraph;
     };
   }
+}
 
+.login__form--width {
+  max-width: 400px;
   @media (min-width: 992px) {
     padding: 0 0 0 3.4rem;
   }
