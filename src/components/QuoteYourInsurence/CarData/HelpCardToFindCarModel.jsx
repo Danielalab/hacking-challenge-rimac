@@ -1,6 +1,6 @@
 /* styles */
 import './scss/HelpCardToFindCarModel.scss';
-import iconCar from '../../images/icon_car.svg';
+import iconCar from '../../../images/icon_car.svg';
 
 const HelpCardToFindCarModel = () => (
   <section className="help-card help-card--position help-card--background mb-3">

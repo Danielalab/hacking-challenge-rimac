@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 /* styles */
 import './scss/CarDataForm.scss';
 /* controllers */
-import { eventHandler, getCurrentYear } from '../utils';
+import { eventHandler, getCurrentYear } from '../../utils';
 /* Components */
-import Button from '../common/Button';
-import Select from '../common/Select';
-import InputField from '../common/Input';
+import Button from '../../common/Button';
+import Select from '../../common/Select';
+import InputField from '../../common/Input';
 import HelpCardToFindCarModel from './HelpCardToFindCarModel';
-import GoBackLink from './GoBackLink';
+import GoBackLink from '../GoBackLink';
 
 const buildYearsList = (currentYear) => {
   const optionsList = [];

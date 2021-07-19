@@ -6,7 +6,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import SideBarSteps from '../components/QuoteYourInsurence/SideBarSteps';
-import CarDataForm from '../components/QuoteYourInsurence/CarDataForm';
+import CarDataForm from '../components/QuoteYourInsurence/CarData/CarDataForm';
 import StepsProgress from '../components/QuoteYourInsurence/StepsProgress';
 import { getCurrentYear } from '../components/utils';
 import { UserContext } from '../context/UserContext';
