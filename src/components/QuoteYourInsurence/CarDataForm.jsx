@@ -9,6 +9,7 @@ import Button from '../common/Button';
 import Select from '../common/Select';
 import InputField from '../common/Input';
 import HelpCardToFindCarModel from './HelpCardToFindCarModel';
+import GoBackLink from './GoBackLink';
 
 const buildYearsList = (currentYear) => {
   const optionsList = [];
@@ -47,121 +48,140 @@ const CarDataForm = ({
   );
 
   return (
-    <form className="form container-fluid">
-      <h2 className="title--color my-2">
-        ¡Hola,
-        {' '}
-        <span className="title__text--highlighted">
-          {clientName}
-          !
-        </span>
-      </h2>
-      <p className="pb-4 mb-2">Completa los datos de tu auto</p>
-      <div className="mb-3">
-        <Select
-          id="year"
-          label="Año"
-          value={yearOfCar}
-          onChange={(event) => eventHandler(setYearOfCar)(event.target.value)}
-        >
-          {yearsList}
-        </Select>
+    <div className="cardata">
+      <div className="cardata__button--back">
+        <GoBackLink />
       </div>
-      <div className="mb-3">
-        <Select
-          id="document-type"
-          label="Marca"
-          value={modelOfCar}
-          onChange={(event) => eventHandler(setmodelOfCar)(event.target.value)}
-        >
-          {carModelsList.map((model) => (<option key={model} value={model}>{model}</option>))}
-        </Select>
-      </div>
-      <div>
-        <p className="title-font title--color">¿Tu auto es a gas?</p>
-        <div className="form-check form-check-inline mb-4">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="gas-car"
-            id="gas-car-yes"
-          />
-          <label className="form-check-label form-check-label--color" htmlFor="gas-car-yes">
-            Sí
-          </label>
-        </div>
-        <div className="form-check form-check-inline mb-4">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="gas-car"
-            id="gas-car-no"
-            checked
-          />
-          <label className="form-check-label form-check-label--color" htmlFor="gas-car-no">
-            No
-          </label>
-        </div>
-      </div>
-      <HelpCardToFindCarModel />
-      <p className="title--font title--color">
-        <label htmlFor="total-sum-insured">
-          Indica la suma asegurada
-          <br />
-          <span className="price-range__label paragraph--color d-flex justify-content-between mt-1">
-            <span>
-              MIN $
-              {minSumInsured}
-            </span>
-            <span>
-              MAX $
-              {maxSumInsured}
-            </span>
+      <form className="form cardata__form--width container-fluid pt-4 m-0">
+        <h2 className="title--color my-2">
+          ¡Hola,
+          {' '}
+          <span className="title__text--highlighted">
+            {clientName}
+            !
           </span>
-        </label>
-      </p>
-      <div className="input-group pb-4 mb-2">
-        <Button
-          classes="border-end-0"
-          type="button"
-          color="outline-light"
-          size="small"
-          onClick={() => changeTotalSumInsured('DECREASE')}
-        >
-          <span className="bi bi-dash-lg" />
-        </Button>
-        <InputField
-          classes="title--font title--color border-end-0 border-start-0 text-center"
-          ariaLabel="Suma total asegurada"
-          type="text"
-          id="total-sum-insured"
-          value={`$ ${totalSumInsured}`}
-          maxLength={8}
-          pattern="[0-9]{8}"
-          floating={false}
-          readonly
-        />
-        <Button
-          classes="border-start-0"
-          type="button"
-          color="outline-light"
-          size="small"
-          onClick={() => changeTotalSumInsured('INCREMENT')}
-        >
-          <span className="bi bi-plus-lg" />
-        </Button>
-      </div>
+        </h2>
+        <p className="pb-4 mb-2">Completa los datos de tu auto</p>
+        <div className="row">
+          <div className="col position-relative">
+            <div className="mb-3">
+              <Select
+                id="year"
+                label="Año"
+                value={yearOfCar}
+                onChange={(event) => eventHandler(setYearOfCar)(event.target.value)}
+              >
+                {yearsList}
+              </Select>
+            </div>
+            <div className="mb-3">
+              <Select
+                id="document-type"
+                label="Marca"
+                value={modelOfCar}
+                onChange={(event) => eventHandler(setmodelOfCar)(event.target.value)}
+              >
+                {carModelsList.map((model) => (<option key={model} value={model}>{model}</option>))}
+              </Select>
+            </div>
+            <div className="cardata__radio--margin d-lg-flex justify-content-lg-between mb-4">
+              <p className="title-font title--color my-2">¿Tu auto es a gas?</p>
+              <div className="my-2">
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="gas-car"
+                    id="gas-car-yes"
+                  />
+                  <label className="form-check-label form-check-label--color" htmlFor="gas-car-yes">
+                    Sí
+                  </label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="gas-car"
+                    id="gas-car-no"
+                    checked
+                  />
+                  <label className="form-check-label form-check-label--color" htmlFor="gas-car-no">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
 
-      <div>
-        <Button
-          type="submit"
-          color="primary"
-          classes="w-100"
-        >
-          CONTINUAR
-        </Button>
-      </div>
-    </form>
+            <hr className="d-none d-lg-block" />
+
+            <HelpCardToFindCarModel />
+
+            <div className="d-lg-flex justify-content-lg-between mt-4">
+              <p className="title--font title--color my-2">
+                <label htmlFor="total-sum-insured">
+                  Indica la suma asegurada
+                  <br />
+                  <span className="price-range__label paragraph--color d-flex justify-content-between mt-1">
+                    <span>
+                      MIN $
+                      {minSumInsured}
+                    </span>
+                    <span>
+                      MAX $
+                      {maxSumInsured}
+                    </span>
+                  </span>
+                </label>
+              </p>
+              <div className="price-range input-group pb-4 my-2">
+                <Button
+                  classes="price-range__button border-end-0 pe-0"
+                  type="button"
+                  color="outline-light"
+                  size="small"
+                  onClick={() => changeTotalSumInsured('DECREASE')}
+                >
+                  <span className="bi bi-dash-lg" />
+                </Button>
+                <InputField
+                  classes="title--font title--color border-end-0 border-start-0 text-center"
+                  ariaLabel="Suma total asegurada"
+                  type="text"
+                  id="total-sum-insured"
+                  value={`$ ${totalSumInsured}`}
+                  maxLength={8}
+                  pattern="[0-9]{8}"
+                  floating={false}
+                  readonly
+                />
+                <Button
+                  classes="price-range__button border-start-0 ps-0"
+                  type="button"
+                  color="outline-light"
+                  size="small"
+                  onClick={() => changeTotalSumInsured('INCREMENT')}
+                >
+                  <span className="bi bi-plus-lg" />
+                </Button>
+              </div>
+            </div>
+
+            <div>
+              <Button
+                type="submit"
+                color="primary"
+                classes="w-100"
+              >
+                CONTINUAR
+                {' '}
+                <span className="bi bi-chevron-right" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
 
