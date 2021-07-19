@@ -4,7 +4,7 @@ import './scss/StepsProgress.scss';
 const StepsProgress = ({ steps, currentStep }) => {
   const percentage = currentStep === 0 ? currentStep : ((currentStep / steps) * 100);
   return (
-    <div className="stepsprogress-container container-fluid py-3">
+    <div className="stepsprogress-container container-fluid d-lg-none py-3">
       <label className="stepsprogress-container__label--margin" htmlFor="file">
         Paso
         {' '}
