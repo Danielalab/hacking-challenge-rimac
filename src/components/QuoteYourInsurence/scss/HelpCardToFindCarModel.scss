@@ -1,6 +1,8 @@
 @import '../../../styles/variables';
 
 .help-card {
+  padding: 1rem;
+
   &--background {
     background-color: $Gray_7;
   }
@@ -12,8 +14,26 @@
   }
 
   @media (min-width: 992px) {
+    width: 50%;
+    padding-top: 0;
+
+    &__title {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    &__message {
+      padding-top: 1rem;
+    }
+
     &--background {
-      background-color: none;
+      background-color: transparent;
+    }
+
+    &--position {
+      position: absolute;
+      left: 120%;
+      top: 0;
     }
   }
 }
