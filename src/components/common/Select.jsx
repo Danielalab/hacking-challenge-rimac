@@ -12,7 +12,7 @@ const Select = ({
   const SelectElement = () => (
     <select
       {...rest}
-      className="form-select select--color"
+      className="form-select select--color cursor--pointer"
       id={id}
       required={required}
       aria-label={label}
