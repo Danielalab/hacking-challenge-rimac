@@ -41,6 +41,10 @@ body {
   height: 100vh;
 }
 
+.cursor--pointer {
+  cursor: pointer;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .container--padding {
