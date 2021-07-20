@@ -11,6 +11,7 @@ import PolicyCoverageItem from './PolicyCoverageItem';
 /* data */
 import policyCoverages from './policyCoverages';
 import PolicyPrice from './PolicyPrice';
+import { getTotalMonthPrice } from '../../utils';
 
 const MakeYourPlan = ({ yearOfCar, modelOfCar, plateOfCar }) => {
   const { url } = useRouteMatch();
@@ -19,6 +20,7 @@ const MakeYourPlan = ({ yearOfCar, modelOfCar, plateOfCar }) => {
     { pathname: `${url}`, name: 'Protege a los que te rodean' },
     { pathname: `${url}`, name: 'mejora tu plan' },
   ];
+  const baseMonthPrice = 20;
   const [currentCategory, setCurrentCategory] = useState(categories[0].name);
   const [policyCoveragesAdded, setPolicyCoveragesAdded] = useState([]);
 
@@ -87,7 +89,9 @@ const MakeYourPlan = ({ yearOfCar, modelOfCar, plateOfCar }) => {
         </div>
       </div>
       <div className="fixed-bottom">
-        <PolicyPrice />
+        <PolicyPrice
+          total={getTotalMonthPrice(policyCoveragesAdded, baseMonthPrice)}
+        />
       </div>
     </div>
   );
