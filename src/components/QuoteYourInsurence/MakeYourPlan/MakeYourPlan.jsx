@@ -20,6 +20,21 @@ const MakeYourPlan = ({ yearOfCar, modelOfCar, plateOfCar }) => {
     { pathname: `${url}`, name: 'mejora tu plan' },
   ];
   const [currentCategory, setCurrentCategory] = useState(categories[0].name);
+  const [policyCoveragesAdded, setPolicyCoveragesAdded] = useState([]);
+
+  const addPolicyCoverage = (policyCoverage, operation) => {
+    let newPolicyCoveragesAddedList = [];
+    if (policyCoveragesAdded.length === 0) {
+      newPolicyCoveragesAddedList.push(policyCoverage);
+    } else if (operation === 'ADD') {
+      newPolicyCoveragesAddedList = [...policyCoveragesAdded, policyCoverage];
+    } else if (operation === 'DELETE') {
+      newPolicyCoveragesAddedList = policyCoveragesAdded.filter(
+        (item) => item.id !== policyCoverage.id,
+      );
+    }
+    setPolicyCoveragesAdded(newPolicyCoveragesAddedList);
+  };
 
   const handleClickTabs = (tabName) => {
     setCurrentCategory(tabName);
@@ -63,7 +78,7 @@ const MakeYourPlan = ({ yearOfCar, modelOfCar, plateOfCar }) => {
                     <PolicyCoverageItem
                       key={item.id}
                       item={item}
-                      onChange={(res) => { console.log(res); }}
+                      onChange={addPolicyCoverage}
                     />
                   ))}
               </div>
