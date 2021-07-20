@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 /* styles */
 import './scss/CarDataForm.scss';
@@ -33,6 +34,7 @@ const CarDataForm = ({
   const yearsList = buildYearsList(currentYear);
   const minSumInsured = 12500;
   const maxSumInsured = 16500;
+  const history = useHistory();
   const [totalSumInsured, setTotalSumInsured] = useState(14300);
 
   const decreaseOrIncrementBy100 = (min, max, currentNumber) => (operation) => {
@@ -47,12 +49,20 @@ const CarDataForm = ({
     minSumInsured, maxSumInsured, totalSumInsured,
   );
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    history.push('/cotiza-tu-seguro/arma-tu-plan');
+  };
+
   return (
     <div className="cardata">
       <div className="cardata__button--back">
         <GoBackLink />
       </div>
-      <form className="form cardata__form--width container-fluid pt-4 m-0">
+      <form
+        className="form cardata__form--width container-fluid pt-4 m-0"
+        onSubmit={handleSubmit}
+      >
         <h2 className="title--color my-2">
           ¡Hola,
           {' '}
@@ -104,7 +114,7 @@ const CarDataForm = ({
                     type="radio"
                     name="gas-car"
                     id="gas-car-no"
-                    checked
+                    defaultChecked
                   />
                   <label className="form-check-label form-check-label--color" htmlFor="gas-car-no">
                     No
@@ -145,15 +155,13 @@ const CarDataForm = ({
                   <span className="bi bi-dash-lg" />
                 </Button>
                 <InputField
-                  classes="title--font title--color border-end-0 border-start-0 text-center"
+                  classes="price-range--background title--font title--color border-end-0 border-start-0 text-center"
                   ariaLabel="Suma total asegurada"
                   type="text"
                   id="total-sum-insured"
                   value={`$ ${totalSumInsured}`}
-                  maxLength={8}
-                  pattern="[0-9]{8}"
                   floating={false}
-                  readonly
+                  readOnly
                 />
                 <Button
                   classes="price-range__button border-start-0 ps-0"
