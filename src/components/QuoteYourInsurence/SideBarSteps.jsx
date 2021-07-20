@@ -6,7 +6,7 @@ import './scss/SideBarSteps.scss';
 import IconCircle from '../common/IconCircle';
 
 const SideBarSteps = ({ itemsNav, currentItem }) => (
-  <div className="sidebar d-none d-lg-block container--height container--padding pe-0 pt-4">
+  <div className="sidebar d-none d-lg-block container--height container--padding pe-0">
     <nav className="nav flex-column">
       { itemsNav.map((item, index) => (
         <li key={item.id} className="nav-item">

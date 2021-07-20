@@ -3,7 +3,7 @@ import imageCardMobile from '../../../images/man-happy-mobile.svg';
 import './scss/CarModelCard.scss';
 
 const CarModelCard = ({ plate, model, year }) => (
-  <div className="car-model-card d-flex position-relative rounded">
+  <div className="car-model-card d-flex position-relative">
     <div className="car-model-card__content">
       <p className="car-model-card__text--disabled">
         Placa:
@@ -11,13 +11,13 @@ const CarModelCard = ({ plate, model, year }) => (
         {plate}
       </p>
       <p
-        className="car-model-card__title title-font title--color d-flex justify-content-between"
+        className="car-model-card__title title-font title--color d-flex justify-content-between justify-content-lg-start"
       >
-        <span>
+        <span className="me-1">
           {model}
           {' '}
         </span>
-        <span>{year}</span>
+        <span className="ms-1">{year}</span>
       </p>
       <span className="car-model-card__btn cursor--pointer title--font text-uppercase">editar</span>
     </div>

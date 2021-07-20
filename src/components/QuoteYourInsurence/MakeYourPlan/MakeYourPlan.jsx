@@ -47,51 +47,53 @@ const MakeYourPlan = ({ yearOfCar, modelOfCar, plateOfCar }) => {
       <div className="cardata__button--back">
         <GoBackLink />
       </div>
-      <div>
-        <div className="policy-coverages__section policy-coverages__section--background container-fluid">
-          <section>
-            <h2 className="title--color my-2">Mira las coberturas</h2>
-            <p className="pb-4 mb-2">Conoce las coberturas para tu plan</p>
-            <div className="row">
-              <div className="col">
-                <CarModelCard plate={plateOfCar} model={modelOfCar} year={yearOfCar} />
+      <div className="d-lg-flex">
+        <div className="col-lg-6">
+          <div className="policy-coverages__section policy-coverages__section--background container-fluid pt-4">
+            <section>
+              <h2 className="h1 title--color my-2">Mira las coberturas</h2>
+              <p className="pb-4 mb-2">Conoce las coberturas para tu plan</p>
+              <div className="row">
+                <div className="col">
+                  <CarModelCard plate={plateOfCar} model={modelOfCar} year={yearOfCar} />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
+          <div className="policy-coverages__section container-fluid">
+            <section>
+              <h4 className="title--color my-2">Agrega o quita coberturas</h4>
+              <p className="pb-4 mb-2">Conoce las coberturas para tu plan</p>
+              <div className="row">
+                <div className="col">
+                  <Tabs
+                    items={categories}
+                    currentTab={currentCategory}
+                    onClick={handleClickTabs}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  {policyCoverages
+                    .filter((item) => item.type === currentCategory)
+                    .map((item) => (
+                      <PolicyCoverageItem
+                        key={item.id}
+                        item={item}
+                        onChange={addPolicyCoverage}
+                      />
+                    ))}
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-        <div className="policy-coverages__section container-fluid">
-          <section>
-            <h2 className="title--color my-2">Agrega o quita coberturas</h2>
-            <p className="pb-4 mb-2">Conoce las coberturas para tu plan</p>
-            <div className="row">
-              <div className="col">
-                <Tabs
-                  items={categories}
-                  currentTab={currentCategory}
-                  onClick={handleClickTabs}
-                />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                {policyCoverages
-                  .filter((item) => item.type === currentCategory)
-                  .map((item) => (
-                    <PolicyCoverageItem
-                      key={item.id}
-                      item={item}
-                      onChange={addPolicyCoverage}
-                    />
-                  ))}
-              </div>
-            </div>
-          </section>
+        <div className="fixed-bottom col-lg-4 offset-lg-1 policy-coverages__section-boxprice--position">
+          <PolicyPrice
+            total={getTotalMonthPrice(policyCoveragesAdded, baseMonthPrice)}
+          />
         </div>
-      </div>
-      <div className="fixed-bottom">
-        <PolicyPrice
-          total={getTotalMonthPrice(policyCoveragesAdded, baseMonthPrice)}
-        />
       </div>
     </div>
   );

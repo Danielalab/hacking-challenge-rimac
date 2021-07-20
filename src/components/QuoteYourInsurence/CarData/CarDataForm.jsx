@@ -63,7 +63,7 @@ const CarDataForm = ({
         className="form cardata__form--width container-fluid pt-4 m-0"
         onSubmit={handleSubmit}
       >
-        <h2 className="title--color my-2">
+        <h2 className="h1 title--color my-2">
           ¡Hola,
           {' '}
           <span className="title__text--highlighted">

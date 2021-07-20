@@ -5,6 +5,10 @@ import {
   useRouteMatch,
   useLocation,
 } from 'react-router-dom';
+/* styles */
+import './scss/QuoteYourInsurence.scss';
+
+/* components */
 import SideBarSteps from '../components/QuoteYourInsurence/SideBarSteps';
 import CarDataForm from '../components/QuoteYourInsurence/CarData/CarDataForm';
 import StepsProgress from '../components/QuoteYourInsurence/StepsProgress';
@@ -28,10 +32,10 @@ const QuoteYourInsurenceView = () => {
   const currentStepIndex = steps.findIndex((step) => step.pathname === pathname);
 
   return (
-    <div className="container-fluid position relative">
+    <div className="container-fluid position-relative view--position">
       <div className="row">
         <StepsProgress steps={steps.length} currentStep={currentStepIndex + 1} />
-        <div className="position-absolute col-lg-3 p-0">
+        <div className="position-fixed col-lg-3 p-0">
           <SideBarSteps itemsNav={steps} currentItem={currentStep.id} />
         </div>
         <div className="col-lg-9 offset-lg-3 p-0 container-fluid">
