@@ -5,6 +5,10 @@
     font-size: 0.8rem;
   }
 
+  &--background {
+    background-color: transparent !important;
+  }
+
   @media (min-width: 992px) {
     max-width: 200px;
 
