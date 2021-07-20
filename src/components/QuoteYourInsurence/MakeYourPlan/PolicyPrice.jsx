@@ -11,7 +11,7 @@ const PolicyPrice = ({ total }) => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    history.push('/cotiza-tu-seguro/arma-tu-plan');
+    history.push('/agradecimiento');
   };
 
   return (
