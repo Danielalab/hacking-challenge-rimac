@@ -8,5 +8,17 @@
     &--background {
       background-color: $Gray_7;
     }
+
+    @media (min-width: 992px) {
+      padding: 2rem;
+
+      &--background {
+        background-color: transparent;
+      }
+
+      &-boxprice--position {
+        position: relative;
+      }
+    }
   }
 }
