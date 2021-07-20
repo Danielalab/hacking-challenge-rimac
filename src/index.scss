@@ -9,6 +9,7 @@
 body {
   font-family: $font_text;
   color: $Gray_2_Paragraph;
+  line-height: 24px;
 }
 
 .container--padding {
@@ -16,6 +17,10 @@ body {
 }
 
 .title {
+  line-height: 36px;
+  /* or 129% */
+  letter-spacing: -0.6px;
+
   &--color {
     color: $Gray_1_Titles;
   }
@@ -58,6 +63,8 @@ body {
   }
 
   .title {
+    line-height: 48px;
+    letter-spacing: -0.2px;
     &__text-desktop--highlighted {
       color: $Red_1_Rimac;
     }
