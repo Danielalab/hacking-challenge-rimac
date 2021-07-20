@@ -3,13 +3,13 @@ import imageBannerMobile from '../../images/woman-with-phone.png';
 import imageBannerDesktop from '../../images/illustracion-banner-desktop.png';
 
 const WelcomeBanner = () => (
-  <section className="d-flex flex-lg-column justify-content-center
+  <section className="d-lg-flex flex-lg-column justify-content-lg-center
     position-relative container-fluid container--padding banner"
   >
     <figure className="banner__content--padding banner__image-dektop d-none d-lg-block">
       <img src={imageBannerDesktop} alt="mujer sonriente con un celular y auto" />
     </figure>
-    <div className="banner__content--padding">
+    <div className="banner__content banner__content--padding">
       <p className="mb-2 title--font title--color">¡Nuevo!</p>
       <h1 className="mb-3 title--font title--color">
         Seguro
