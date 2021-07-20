@@ -14,8 +14,14 @@ const PolicyCoverageItem = (
   const handleClickButton = () => {
     setShowContent(!showContent);
   };
-  const handleChangeInput = () => {
-    onChange(item);
+  const handleChangeInput = (event) => {
+    let operation = '';
+    if (event.target.checked) {
+      operation = 'ADD';
+    } else {
+      operation = 'DELETE';
+    }
+    onChange(item, operation);
   };
 
   return (
