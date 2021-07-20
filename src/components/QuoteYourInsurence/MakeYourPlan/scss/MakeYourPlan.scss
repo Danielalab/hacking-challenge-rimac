@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+
+.policy-coverages {
+  &__section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    &--background {
+      background-color: $Gray_7;
+    }
+  }
+}
