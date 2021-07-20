@@ -9,7 +9,7 @@ const SideBarSteps = ({ itemsNav, currentItem }) => (
   <div className="sidebar d-none d-lg-block container--height container--padding pe-0 pt-4">
     <nav className="nav flex-column">
       { itemsNav.map((item, index) => (
-        <li className="nav-item">
+        <li key={item.id} className="nav-item">
           <Link
             className={`nav-link title--font sidebar__link px-0 ${item.id === currentItem && 'sidebar__link--active'}`}
             to={item.pathname}
