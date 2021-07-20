@@ -12,6 +12,7 @@ import LoginView from './pages/LoginView';
 /* Context */
 import { UserContext } from './context/UserContext';
 import QuoteYourInsurenceView from './pages/QuoteYourInsurenceView';
+import ThanksView from './pages/ThanksView';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/cotiza-tu-seguro">
             <QuoteYourInsurenceView />
+          </Route>
+          <Route path="/agradecimiento">
+            <ThanksView />
           </Route>
         </Switch>
       </div>
