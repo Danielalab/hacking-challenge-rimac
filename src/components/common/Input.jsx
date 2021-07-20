@@ -55,7 +55,7 @@ InputField.defaultProps = {
   label: null,
   placeholder: '',
   maxLength: undefined,
-  pattern: '',
+  pattern: null,
   ariaLabel: null,
   floating: true,
   classes: '',
