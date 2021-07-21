@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Hacking Challenge Rimac
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una página web que permite a los clientes de Rimac cotizar un seguro vehicular  🚗.  
+Las(os) usuarias(os) porán ingresar sus datos y decidir el monto con el que deseean asegurar su vehículo. Además pueden agregar o quitar otras coberturas al plan del seguro vehicular.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+- Puedes ver una demo del proyecto en el siguiente video: [Ver video](https://www.loom.com/share/989507ba196740de9998d237d3d745b7)
+- Puede visualizar el proyecto desplegado en el siguiente link: [Hacking Challenge App](https://hacking-challenge-rimac.web.app/)
 
-### `yarn start`
+### Correr el proyecto de manera local en su computadora
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  1. Clonar el repositorio: `git clone https://github.com/Danielalab/hacking-challenge-rimac.git`
+  2. Entrar a la carpeta: `cd hacking-challenge-rimac`
+  3. Instalar las dependencias del proyecto: `npm install`
+  4. Levantar el servidor local: `npm start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Stack Tecnológico
 
-### `yarn test`
+#### React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se utilizó React para renderizar las vistas contruyendo una **single page aplication** que ayuda a que la página cargue
+de forma más rápida.
+Se utilizaron diversos Hooks para manejar el estado de la aplicación:
+- useState: para manejar el estado interno de cada componente.
+- useContext: para guardar información global que se necesitaba en diversos componentes como la placa, nombre de cliente, etc.
 
-### `yarn build`
+#### React Router
+Se utilizó React Router para manejar las rutas de la aplicación.
+Hooks utilizados:
+- useLocation
+- useHistory
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### PropTypes:
+Se utilizó para validar las propiedades de cada componente.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Sass
+Se utilizó Sass para construir los estilos de la aplicación y poder reutilizarlos usando clases.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Git & Github:
+Se utilizo Git para el control de versiones del proyecto de manera local y Github para alojar el proyecto de forma remota, crear un project,
+releases, issues.
 
-### `yarn eject`
+#### Bootstrap
+Se utilizó este framework de Css para poder contruir los estilos de la aplicación de forma más rápido utilizando sus clases pre-construidas.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Eslint
+Herramiento de desarrollo para poder mantener un estilo legible en el código. Para este proyecto se hizo uso de 
+[la guía de estilos de Airbnb](https://www.npmjs.com/package/eslint-config-airbnb).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Firebase Hoisting
+Es una PaaS que nos permite desplegar la aplicación de forma rápida.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Planificación 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para este proyecto se crearon 4 historias de usuario. Cada historia tiene sus criterios de aceptación y definición de terminado.
+La planificación se encuentra en un tablero de Kanban alojado en un proyecto de Github [Ver tablero](https://github.com/Danielalab/hacking-challenge-rimac/projects/1).
 
-## Learn More
+### Historias de Usuario
+Por cada Historia de usuario se creo una lista de tareas en issues ([Ver lista de tareas](https://github.com/Danielalab/hacking-challenge-rimac/issues?q=is%3Aissue+is%3Aclosed)).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [HU1: Yo como cliente de Rimac debo poder iniciar sesión de manera sencilla para cotizar mi seguro vehicular](https://github.com/Danielalab/hacking-challenge-rimac/issues/3)
+- [HU2: Yo como cliente de Rimac debo poder indicar los datos de mi vehículo y el monto de mi seguro](https://github.com/Danielalab/hacking-challenge-rimac/issues/16)
+- [HU3: Yo como cliente de Rimac debo poder agregar y quitar coberturas a mi plan de seguro vehicular](https://github.com/Danielalab/hacking-challenge-rimac/issues/26)
+- [HU4: Yo como cliente de Rimac debo poder ver una página de agradecimiento con los instrucciones finales](https://github.com/Danielalab/hacking-challenge-rimac/issues/37)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Realeases
+Para este proyecto se realizaron 3 realeases:
+- [v0.2.0: Boy With Luv](https://github.com/Danielalab/hacking-challenge-rimac/releases/tag/v0.2.0)
+- [v0.3.0: ON Kinetic Manifesto Film](https://github.com/Danielalab/hacking-challenge-rimac/releases/tag/v0.3.0)
+- [v0.4.0: Fake Love](https://github.com/Danielalab/hacking-challenge-rimac/releases/tag/v0.4.0)
