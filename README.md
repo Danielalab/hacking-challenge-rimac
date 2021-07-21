@@ -58,6 +58,7 @@ La planificación se encuentra en un tablero de Kanban alojado en un proyecto de
 
 ### Historias de Usuario
 Por cada Historia de usuario se creo una lista de tareas en issues ([Ver lista de tareas](https://github.com/Danielalab/hacking-challenge-rimac/issues?q=is%3Aissue+is%3Aclosed)).
+Antes de crear las historias de usuario se identifico la lista de posibles componentes de acuerdo al diseño entregado ([Ver lista de componentes](https://www.figma.com/file/lGcYVFEnSSpKElo8G1X6yM/Hacking-Challenge-2021-Dani-version?node-id=2603%3A720)).
 
 - [HU1: Yo como cliente de Rimac debo poder iniciar sesión de manera sencilla para cotizar mi seguro vehicular](https://github.com/Danielalab/hacking-challenge-rimac/issues/3)
 - [HU2: Yo como cliente de Rimac debo poder indicar los datos de mi vehículo y el monto de mi seguro](https://github.com/Danielalab/hacking-challenge-rimac/issues/16)
