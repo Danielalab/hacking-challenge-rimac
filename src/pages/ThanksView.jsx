@@ -13,13 +13,13 @@ const ThanksView = () => {
   return (
     <div className="container-fluid">
       <div className="row container--full-height">
-        <figure className="thanks-view__figure position-relative col col-lg-4 p-0 mb-0">
+        <figure className="thanks-view__figure position-relative col-12 col-lg-4 p-0 mb-0">
           <picture>
             <source media="(min-width: 992px)" srcSet={imageDesktop} />
             <img src={imageMobile} alt="hombre sonriente en casa" />
           </picture>
         </figure>
-        <div className="col container-fluid thanks-view__message-container">
+        <div className="col-12 col-lg-8 container-fluid thanks-view__message-container">
           <div className="">
             <h2 className="title title--font title--color thanks-view__title">
               <span className="title__text--highlighted">
@@ -35,7 +35,7 @@ const ThanksView = () => {
                 {email}
               </span>
             </p>
-            <Button classes="thanks-view__button">
+            <Button classes="thanks-view__button text-uppercase">
               cómo usar mi seguro
             </Button>
           </div>

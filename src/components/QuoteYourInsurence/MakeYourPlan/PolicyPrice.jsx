@@ -36,15 +36,15 @@ const PolicyPrice = ({ total }) => {
           <p className="d-none d-lg-block">El precio incluye:</p>
           <ul className="list-unstyled d-none d-lg-block mb-4">
             <li className="mb-2">
-              <i className="bi bi-check2 me-3" />
+              <i className="bi bi-check2 policy-price__list-icon me-3" />
               <span>Llanta de respuesto</span>
             </li>
             <li className="mb-2">
-              <i className="bi bi-check2 me-3" />
+              <i className="bi bi-check2 policy-price__list-icon me-3" />
               <span>Analisis de motor</span>
             </li>
             <li className="mb-2">
-              <i className="bi bi-check2 me-3" />
+              <i className="bi bi-check2 policy-price__list-icon me-3" />
               <span>Aros gratis</span>
             </li>
           </ul>

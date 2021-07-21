@@ -19,6 +19,10 @@
     padding: 1rem 2rem;
   }
 
+  &__list-icon {
+    color: $Green_2;
+  }
+
   @media (min-width: 992px) {
     box-shadow: none;
     padding: 2rem;
