@@ -8,6 +8,12 @@ Las(os) usuarias(os) porán ingresar sus datos y decidir el monto con el que des
 - Puedes ver una demo del proyecto en el siguiente video: [Ver video](https://www.loom.com/share/989507ba196740de9998d237d3d745b7)
 - Puede visualizar el proyecto desplegado en el siguiente link: [Hacking Challenge App](https://hacking-challenge-rimac.web.app/)
 
+> Nota: Todos los campos del primer formulario de ingreso son requeridos y deben cumplir con el siguiente formato:
+> - DNI: 8 dígitos numéricos (Ejemplo: `99900991`).
+> - Celular: 9 dígitos numéricos (Ejemplo: `525213649`).
+> - Placa: 3 primeros dígitos deben ser númericos o letras. Debe continuar un guión `-` y los tres últimos dígitos deben ser numéricos
+> (Ejemplo: `ABC-369`).
+
 ### Correr el proyecto de manera local en su computadora
 
   1. Clonar el repositorio: `git clone https://github.com/Danielalab/hacking-challenge-rimac.git`
